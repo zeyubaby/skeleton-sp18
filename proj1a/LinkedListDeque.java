@@ -1,10 +1,10 @@
 public class LinkedListDeque<T> {
     private class Node {
-        public T item;
-        public Node prev;
-        public Node next;
+        private T item;
+        private Node prev;
+        private Node next;
 
-        public Node(T i, Node p, Node n) {
+        private Node(T i, Node p, Node n) {
             item = i;
             prev = p;
             next = n;
@@ -22,18 +22,21 @@ public class LinkedListDeque<T> {
     }
 
     /* create a LinkedListDeque*/
-    public LinkedListDeque(T i) {
-        sentinel = new Node(null, null, null);
-        sentinel.next = new Node(i, sentinel, sentinel);
-        sentinel.prev = sentinel.next;
-        size = 1;
-    }
+//    public LinkedListDeque(T i) {
+//        sentinel = new Node(null, null, null);
+//        sentinel.next = new Node(i, sentinel, sentinel);
+//        sentinel.prev = sentinel.next;
+//        size = 1;
+//    }
 
     /* add First Node */
     public void addFirst(T item) {
         Node addNode = new Node(item, sentinel, sentinel.next);
         if (sentinel.next != null) {
             sentinel.next.prev = addNode;
+        } else {
+            addNode.next = sentinel;
+            sentinel.prev = addNode;
         }
         sentinel.next = addNode;
         size += 1;
@@ -94,15 +97,15 @@ public class LinkedListDeque<T> {
         return removedLast;
     }
 
-    public LinkedListDeque(LinkedListDeque other) {
-        //author is professor
-        sentinel = new Node(null, null, null);
-        size = 0;
-
-        for (int i = 0; i < other.size; i++) {
-            addLast((T) other.get(i));
-        }
-    }
+//    public LinkedListDeque(LinkedListDeque other) {
+//        //author is professor
+//        sentinel = new Node(null, null, null);
+//        size = 0;
+//
+//        for (int i = 0; i < other.size; i++) {
+//            addLast((T) other.get(i));
+//        }
+//    }
 
     public T get(int index) {
         Node ptr = sentinel.next;
@@ -132,17 +135,20 @@ public class LinkedListDeque<T> {
     }
 
 
-    public static void main(String[] args) {
-        System.out.println("Running tests.\n");
-        LinkedListDeque<Integer> test = new LinkedListDeque<>();
-        System.out.println(test.isEmpty());
-        test.addLast(1);
-        test.addFirst(12);
-        test.addFirst(13);
-        test.addLast(20);
-        System.out.println(test.isEmpty());
-        System.out.println(test.getRecursive(2));
-        test.printDeque();
-    }
+//    public static void main(String[] args) {
+//        System.out.println("Running tests.\n");
+//        LinkedListDeque<Integer> test = new LinkedListDeque<>();
+//        System.out.println(test.isEmpty());
+////        test.addLast(1);
+////        test.addFirst(12);
+////        test.addFirst(13);
+////        test.addLast(20);
+//        test.addFirst(1);
+//        test.addLast(2);
+//        System.out.println("rrrr"+test.removeFirst());
+//        System.out.println(test.isEmpty());
+//        System.out.println(test.getRecursive(2));
+//        test.printDeque();
+//    }
 
 }
