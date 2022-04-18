@@ -59,6 +59,7 @@ public class LinkedListDeque<T> {
     }
 
     public int size() {
+        size = size <= 0 ? 0 : size;
         return size;
     }
 
@@ -139,16 +140,19 @@ public class LinkedListDeque<T> {
 //        System.out.println("Running tests.\n");
 //        LinkedListDeque<Integer> test = new LinkedListDeque<>();
 //        System.out.println(test.isEmpty());
+//        test.removeFirst();
+//        test.removeLast();
+//        System.out.println(test.size);
 ////        test.addLast(1);
 ////        test.addFirst(12);
 ////        test.addFirst(13);
 ////        test.addLast(20);
-//        test.addFirst(1);
-//        test.addLast(2);
-//        System.out.println("rrrr"+test.removeFirst());
-//        System.out.println(test.isEmpty());
-//        System.out.println(test.getRecursive(2));
-//        test.printDeque();
+////        test.addFirst(1);
+////        test.addLast(2);
+////        System.out.println("rrrr" + test.removeFirst());
+////        System.out.println(test.isEmpty());
+////        System.out.println(test.getRecursive(2));
+////        test.printDeque();
 //    }
 
 }
