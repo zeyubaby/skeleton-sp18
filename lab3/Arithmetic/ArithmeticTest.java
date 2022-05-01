@@ -5,7 +5,7 @@ public class ArithmeticTest {
 
     /** Performs a few arbitrary tests to see if the product method is correct */
 
-    @Test 
+    @Test
     public void testProduct() {
         /* assertEquals for comparison of ints takes two arguments:
         assertEquals(expected, actual).
