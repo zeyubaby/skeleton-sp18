@@ -37,10 +37,5 @@ public class Palindrome {
         return true;
     }
 
-    public static void main(String[] args) {
-        Palindrome palindrome = new Palindrome();
-        String word = "aaaabbb";
-        palindrome.wordToDeque(word);
-    }
 
 }
