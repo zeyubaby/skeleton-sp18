@@ -41,5 +41,6 @@ public class TestPalindrome {
         assertFalse(palindrome.isPalindrome("awdssdd", offByOne));
         assertTrue(palindrome.isPalindrome("flke", offByOne));
         assertTrue(palindrome.isPalindrome("AcdB", offByOne));
+        assertTrue(palindrome.isPalindrome("a", offByOne));
     }
 }
